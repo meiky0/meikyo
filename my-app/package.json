@@ -15,14 +15,19 @@
     "expo-battery": "~9.1.4",
     "expo-brightness": "~13.1.4",
     "expo-dev-client": "~5.1.8",
+    "expo-linear-gradient": "~14.1.4",
     "expo-status-bar": "~2.2.3",
+    "express": "^5.1.0",
     "lucide-react-native": "^0.511.0",
+    "next": "^15.3.2",
+    "node": "^22.16.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.2",
     "react-native-web": "^0.20.0",
     "react-native-webview": "13.13.5",
-    "expo-linear-gradient": "~14.1.4"
+    "websocket": "^1.0.35",
+    "ws": "^8.18.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
