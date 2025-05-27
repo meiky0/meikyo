@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import { Platform } from 'react-native';
 
-import ConvAiDOMComponent from './components/ConvAI';
+import Widget from './components/Widget';
 import tools from './utils/tools';
 
 export default function App() {
@@ -41,16 +41,17 @@ export default function App() {
             </View>
           </View>
         </View>
-        <View style={styles.domComponentContainer}>
-          <ConvAiDOMComponent
-            dom={{ style: styles.domComponent }}
-            platform={Platform.OS}
-            get_battery_level={tools.get_battery_level}
-            change_brightness={tools.change_brightness}
-            flash_screen={tools.flash_screen}
-          />
-        </View>
       </View>
+
+      {/* Voice Widget - positioned as floating widget */}
+      <Widget
+        dom={{ style: styles.widget }}
+        platform={Platform.OS}
+        get_battery_level={tools.get_battery_level}
+        change_brightness={tools.change_brightness}
+        flash_screen={tools.flash_screen}
+      />
+
       <StatusBar style="light" />
     </SafeAreaView>
   );
@@ -115,15 +116,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     fontFamily: 'Inter-Regular',
   },
-  domComponentContainer: {
-    width: 120,
-    height: 120,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 24,
-  },
-  domComponent: {
-    width: 120,
-    height: 120,
+  widget: {
+    // Widget will handle its own positioning via fixed positioning
   },
 });
